@@ -1,0 +1,20 @@
+/* 通用页面设置 */
+html, body {
+    height: 100%; /* 确保页面至少有100%的高度 */
+    margin: 0;    /* 清除默认边距 */
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center;     /* 垂直居中 */
+    font-family: Arial, sans-serif; /* 设置通用字体 */
+    background-color: #f0f0f0; /* 背景色可以根据需要调整 */
+}
+
+/* 页面容器样式 */
+.container {
+    width: 90%; /* 最大宽度为 90% */
+    max-width: 1200px; /* 容器最大宽度为 1200px */
+    padding: 20px;
+    background-color: #fff; /* 白色背景 */
+    border-radius: 8px; /* 圆角效果 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 轻微阴影效果 */
+}

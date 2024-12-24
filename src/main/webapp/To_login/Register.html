@@ -1,10 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">//注册页面
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>Register webpage</title>
+
+    <link href="register.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页面</title>
+    <style>
+        .register-section {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-<p>welcome to register page</p>
+
+<h1>选择注册类型</h1>
+
+<input type="radio" id="adRegister" name="registerType" value="ad" checked>
+<label for="adRegister">广告主注册</label>
+
+<input type="radio" id="siteRegister" name="registerType" value="site">
+<label for="siteRegister">互联网站主注册</label>
+<div class="container">
+    <div id="adRegisterForm" class="register-section">
+        <h2>广告主注册表单</h2>
+        <form action="Register-servlet" method="post">
+            <!-- 广告主相关注册字段 -->
+            <label for="adName">广告主姓名</label>
+            <input type="text" id="adName" name="adName">
+            <br>
+            <label for="adEmail">广告主邮箱</label>
+            <input type="email" id="adEmail" name="adEmail">
+            <br>
+            <label for="adPassword">网站主密码</label>
+            <input type="password" id="adPassword" name="adPassword">
+            <br>
+            <input type="hidden" value="ad" name="registerType"><br>
+
+            <button class="btn-primary" type="submit">提交广告主注册</button>
+        </form>
+    </div>
+
+
+    <div id="siteRegisterForm" class="register-section">
+        <h2>互联网站主注册表单</h2>
+        <form action="Register-servlet" method="post">
+            <!-- 网站主相关注册字段 -->
+            <label for="siteName">网站主姓名</label>
+            <input type="text" id="siteName" name="siteName">
+
+            <br>
+            <label for="siteEmail">网站主邮箱</label>
+            <input type="email" id="siteEmail" name="siteEmail">
+            <br>
+            <label for="sitePassword">网站主密码</label>
+            <input type="password" id="sitePassword" name="sitePassword">
+            <br>
+            <input type="hidden" value="site" name="registerType"><br>
+            <button class="btn-primary" type="submit">提交网站主注册</button>
+
+
+        </form>
+    </div>
+    <div><p>所有字段长度均小于50</p></div>
+</div>
+<script>
+    // 获取两个选择框
+    const adRadio = document.getElementById('adRegister');
+    const siteRadio = document.getElementById('siteRegister');
+
+    // 获取注册表单
+    const adForm = document.getElementById('adRegisterForm');
+    const siteForm = document.getElementById('siteRegisterForm');
+
+    // 初始显示广告主注册
+    adForm.style.display = 'block';
+
+    // 监听选择框的变化
+    adRadio.addEventListener('change', () => {
+        adForm.style.display = 'block';
+        siteForm.style.display = 'none';
+    });
+
+    siteRadio.addEventListener('change', () => {
+        siteForm.style.display = 'block';
+        adForm.style.display = 'none';
+    });
+</script>
 </body>
 </html>

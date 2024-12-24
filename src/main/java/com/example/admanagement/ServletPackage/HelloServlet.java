@@ -1,4 +1,4 @@
-package com.example.admanagement;
+package com.example.admanagement.ServletPackage;
 
 import java.io.*;
 

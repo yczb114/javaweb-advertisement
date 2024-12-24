@@ -1,8 +1,6 @@
-package com.example.admanagement;
+package com.example.admanagement.DAOPackage;
 
 
-
-import com.sun.source.tree.BreakTree;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -16,7 +14,7 @@ public interface DAO {
         DataSource dataSource = null;
         try{
             Context contetxt = new InitialContext();
-            dataSource=(DataSource)contetxt.lookup("java:comp/env/jdbc/");
+            dataSource=(DataSource)contetxt.lookup("java:comp/env/jdbc/advertisementinfo");
         } catch (NamingException e) {
             throw new RuntimeException(e);
         }
