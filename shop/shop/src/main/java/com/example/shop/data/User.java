@@ -6,10 +6,11 @@ public class User {
     private String password;
     private String cart;
 
-    public User(int id,String username, String password) {
+    public User(int id,String username,String password,String cart) {
         this.id=id;
         this.username = username;
         this.password = password;
+        this.cart=cart;
     }
 
     public User(){}

@@ -3,14 +3,16 @@ package com.example.shop.data;
 public class Commodity {
     private int Cid;
     private String name;
-    private double price;
+    private float price;
     private String path;
     private String tag;
 
-    public Commodity(int cid, String name, double price) {
+    public Commodity(int cid, String name, float price, String path, String tag) {
         Cid = cid;
         this.name = name;
         this.price = price;
+        this.path = path;
+        this.tag = tag;
     }
 
     public Commodity(){}
@@ -35,7 +37,7 @@ public class Commodity {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 

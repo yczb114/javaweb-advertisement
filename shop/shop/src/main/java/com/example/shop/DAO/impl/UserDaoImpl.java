@@ -42,9 +42,10 @@ public class UserDaoImpl implements UserDao {
             User user = null;
             if (rs.next()) {
                 int id = rs.getInt("id");
+                String cart= rs.getString("cart");
                 String username = rs.getString("username");
                 String password = rs.getString("password");
-                user = new User(id, username, password);
+                user = new User(id, username, password, cart);
             }
             return user;
         } catch (SQLException e) {
@@ -67,9 +68,10 @@ public class UserDaoImpl implements UserDao {
             User user = null;
             while (rs.next()) {
                 int id = rs.getInt("id");
+                String cart= rs.getString("cart");
                 String username = rs.getString("username");
                 String password = rs.getString("password");
-                user = new User(id, username, password);
+                user = new User(id, username, password, cart);
                 users.add(user);
             }
             return users;

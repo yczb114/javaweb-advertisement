@@ -16,4 +16,18 @@ public class Service {
         }
         return false;
     }
+
+    public static boolean Register(String name,String password){
+        User user=null;
+        UserDaoImpl userDao=new UserDaoImpl();
+        user=userDao.findBystr(name);
+        if(user!=null){
+            return false;
+        }
+        user=new User();
+        user.setUsername(name);
+        user.setPassword(password);
+        userDao.addUser(user);
+        return true;
+    }
 }
