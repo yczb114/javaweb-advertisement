@@ -1,6 +1,9 @@
 package com.example.admanagement;
 
 import java.io.*;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
@@ -13,13 +16,27 @@ public class HelloServlet extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
 
-        // Hello
-        PrintWriter out = response.getWriter();
-        out.println("<html><body>");
-        out.println("<h1>" + message + "</h1>");
-        out.println("</body></html>");
+    }
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        String action =request.getParameter("action");
+
+        if(action.equals("Advertisers")) {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("./To_login/Advertisers_login.html");
+            dispatcher.forward(request, response);return;
+        }
+        if(action.equals("InternetWebmaster")) {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("./To_login/InternetWebmaster_login.html");
+            dispatcher.forward(request, response);return;
+        }
+        if(action.equals("Administrator")) {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("./To_login/Administrator_login.html");
+            dispatcher.forward(request, response);return;
+        }
+        if(action.equals("register")) {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("./To_login/Register.html");
+            dispatcher.forward(request, response);return;
+        }
     }
 
     public void destroy() {
