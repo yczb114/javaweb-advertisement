@@ -1,7 +1,10 @@
 package com.example.shop;
 
 import java.io.*;
+import java.util.ArrayList;
 
+import com.example.shop.DAO.impl.CommodityDaoImpl;
+import com.example.shop.data.Commodity;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
@@ -17,7 +20,6 @@ public class HelloServlet extends HttpServlet {
         String button=request.getParameter("button");
         String username=(String) request.getAttribute("username");
         String password=(String) request.getAttribute("password");
-        System.out.println(username+"\n"+password);
         String remember=request.getParameter("remember");
         Cookie usernameCookie=new Cookie("username",username);
         Cookie passwordCookie=new Cookie("password",password);
@@ -26,6 +28,7 @@ public class HelloServlet extends HttpServlet {
         if(button==null){
             RequestDispatcher dispatcher=request.getRequestDispatcher("/index.jsp");
             dispatcher.forward(request,response);
+            return;
         }
         if(button.equals("login")){
             if(remember!=null){
@@ -44,17 +47,23 @@ public class HelloServlet extends HttpServlet {
                 request.setAttribute("warning",warning);
                 RequestDispatcher dispatcher=request.getRequestDispatcher("/index.jsp");
                 dispatcher.forward(request,response);
+                return;
             }
             if(!Login(username,password)){
                 warning="登录失败，请检查账号密码";
                 request.setAttribute("warning",warning);
                 RequestDispatcher dispatcher=request.getRequestDispatcher("/index.jsp");
                 dispatcher.forward(request,response);
+                return;
             }
             session.setAttribute("username",username);
             session.setAttribute("visitor",false);
+            CommodityDaoImpl commodityDao=new CommodityDaoImpl();
+            ArrayList<Commodity> commodities=commodityDao.findall();
+            request.setAttribute("commodities",commodities);
             RequestDispatcher dispatcher=request.getRequestDispatcher("/shop.jsp");
             dispatcher.forward(request,response);
+            return;
         }
         if(button.equals("register")){
             RequestDispatcher dispatcher=request.getRequestDispatcher("/register.jsp");
