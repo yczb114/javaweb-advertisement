@@ -1,29 +1,25 @@
 package com.example.news.data;
 
+import lombok.Data;
+
+import java.util.ArrayList;
+
+@Data
 public class News {
-    //新闻有id，标题，内容，日期和发布者
-    private int nid;
+    int nid;
     private String title;
+    private String author;
     private String content;
     private String date;
-    private String author;
+    ArrayList<String> tags;
 
-    public News (int nid, String title, String content, String date, String author) {
+    public News(int nid,String title, String author, String content, String date, ArrayList<String> tags) {
         this.nid = nid;
         this.title = title;
+        this.author = author;
         this.content = content;
         this.date = date;
-        this.author = author;
+        this.tags = tags;
     }
-
-    public void setNid(int nid) {this.nid = nid;}
-    public int getNid() {return nid;}
-    public void setTitle(String title) {this.title = title;}
-    public String getTitle() {return title;}
-    public void setContent(String content) {this.content = content;}
-    public String getContent() {return content;}
-    public void setDate(String date) {this.date = date;}
-    public String getDate() {return date;}
-    public void setAuthor(String author) {this.author = author;}
-    public String getAuthor() {return author;}
+    public News(){}
 }
