@@ -23,9 +23,17 @@ public class HelloServlet extends HttpServlet {
         String remember=request.getParameter("remember");
         Cookie usernameCookie=new Cookie("username",username);
         Cookie passwordCookie=new Cookie("password",password);
-        HttpSession session=request.getSession();
         String warning=null;
         if(button==null){
+            RequestDispatcher dispatcher=request.getRequestDispatcher("/index.jsp");
+            dispatcher.forward(request,response);
+            return;
+        }
+        if(button.equals("out")){
+            HttpSession session=request.getSession(false);
+            if (session!=null) {
+                session.invalidate();
+            }
             RequestDispatcher dispatcher=request.getRequestDispatcher("/index.jsp");
             dispatcher.forward(request,response);
             return;
@@ -56,8 +64,8 @@ public class HelloServlet extends HttpServlet {
                 dispatcher.forward(request,response);
                 return;
             }
+            HttpSession session=request.getSession();
             session.setAttribute("username",username);
-            session.setAttribute("visitor",false);
             CommodityDaoImpl commodityDao=new CommodityDaoImpl();
             ArrayList<Commodity> commodities=commodityDao.findall();
             request.setAttribute("commodities",commodities);

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class CommodityDaoImpl implements CommodityDao {
     @Override
-    public Commodity findBystr(String str) {
+    public Commodity findByname(String str) {
         Connection connection = getConnection();
         PreparedStatement pstmt = null;
         ResultSet rs = null;

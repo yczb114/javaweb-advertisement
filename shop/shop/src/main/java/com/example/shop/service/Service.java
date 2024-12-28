@@ -1,6 +1,8 @@
 package com.example.shop.service;
 
+import com.example.shop.DAO.impl.CommodityDaoImpl;
 import com.example.shop.DAO.impl.UserDaoImpl;
+import com.example.shop.data.Commodity;
 import com.example.shop.data.User;
 
 public class Service {
@@ -30,5 +32,16 @@ public class Service {
         userDao.addUser(user);
         return true;
     }
-
+    public static void addCart(String username,int id){
+        UserDaoImpl userDao=new UserDaoImpl();
+        User user=null;
+        user=userDao.findBystr(username);
+        String cart=user.getCart();
+        if(cart==null||cart.isEmpty()){
+            cart=id+"";
+        }else {
+            cart=cart+" "+id;
+        }
+        userDao.updateCart(username,cart);
+    }
 }

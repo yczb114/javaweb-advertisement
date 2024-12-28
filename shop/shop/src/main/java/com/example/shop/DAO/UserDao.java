@@ -8,4 +8,5 @@ public interface UserDao extends Dao {
     public int addUser(User user);
     public User findBystr(String str);
     public ArrayList<User> findall();
+    public void updateCart(String username,String cart);
 }

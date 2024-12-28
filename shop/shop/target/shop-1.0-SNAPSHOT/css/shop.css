@@ -1,0 +1,68 @@
+html{
+    text-align: center;
+}
+body{
+    background: none;
+    color: #661;
+}
+a{
+    text-decoration:none;
+}
+a:link{/* 未访问链接*/
+    color:#000000;
+}
+a:visited {/* 已访问链接 */
+    color:#6633FF;
+}
+a:hover {/* 鼠标移动到链接上 */
+    color:#333399;
+}
+a:active { /* 鼠标点击时 */
+    color:#0000FF;
+}
+.commodity{
+    text-align: left;
+    border: 1px solid #a1a1a1;
+    width: 300px;
+    height: 300px;
+}
+img{
+    border: 1px solid #0a53be;
+    border-radius: 10px;
+}
+.price{
+    color: red;
+}
+hr{
+    border-top: 2px solid #333;
+}
+#out {
+    padding: 10px 20px; /* 按钮内边距 */
+    font-size: 16px; /* 字体大小 */
+    font-weight: bold; /* 字体加粗 */
+    color: #f39c12; /* 文字颜色，橙色 */
+    background-color: #ffffff; /* 背景颜色，白色 */
+    border: 2px solid #f39c12; /* 边框颜色，橙色 */
+    border-radius: 5px; /* 圆角边框 */
+    cursor: pointer; /* 鼠标悬停时显示指针 */
+    transition: all 0.3s; /* 平滑过渡效果 */
+    text-transform: uppercase; /* 文字大写 */
+    letter-spacing: 1px; /* 字母间距 */
+}
+
+#out:hover {
+    background-color: #f1c40f; /* 鼠标悬停时的背景颜色，橙色 */
+    color: #ffffff; /* 鼠标悬停时的文字颜色，白色 */
+}
+
+#out:active {
+    background-color: #e67e22; /* 按钮被按下时的背景颜色，深橙色 */
+}
+.user{
+    padding-left: 75%;
+}
+.d1{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}

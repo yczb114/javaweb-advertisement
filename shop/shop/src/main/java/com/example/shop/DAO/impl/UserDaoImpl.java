@@ -81,4 +81,23 @@ public class UserDaoImpl implements UserDao {
             DButil.closeAll(connection, pstmt, rs);
         }
     }
+
+    @Override
+    public void updateCart(String username,String cart) {
+        Connection connection = getConnection();
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            String sql = "update users set cart = ? where username = ?";
+            pstmt = connection.prepareStatement(sql);
+            pstmt.setString(1,cart);
+            pstmt.setString(2,username);
+            int rows= pstmt.executeUpdate();
+            System.out.println("更新了"+rows+"行");
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }finally {
+            DButil.closeAll(connection, pstmt, rs);
+        }
+    }
 }
