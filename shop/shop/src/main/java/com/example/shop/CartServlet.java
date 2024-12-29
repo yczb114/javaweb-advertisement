@@ -3,6 +3,7 @@ package com.example.shop;
 import com.example.shop.DAO.impl.CommodityDaoImpl;
 import com.example.shop.DAO.impl.UserDaoImpl;
 import com.example.shop.data.Commodity;
+import com.example.shop.data.User;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -15,6 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import static com.example.shop.service.Service.addCart;
+import static com.example.shop.service.Service.showCart;
 
 @WebServlet(name = "cartServlet", value = "/cart-servlet")
 public class CartServlet extends HttpServlet {
@@ -28,22 +30,24 @@ public class CartServlet extends HttpServlet {
             return;
         }
         String username= (String) session.getAttribute("username");
-        int Cid= Integer.parseInt(request.getParameter("Cid"));
         String button=request.getParameter("button");
-        if(button.equals("cadd")){
-            addCart(username,Cid);
-            String jsp=request.getParameter("jsp");
-            if (jsp.equals("shop")){
-                ArrayList<Commodity> commodities=commodityDao.findall();
-                request.setAttribute("commodities",commodities);
+        if(button.equals("showCart")){
+            int[] carts=showCart(username);
+            ArrayList<Commodity> commodities=new ArrayList<>();
+            ArrayList<Integer> num=new ArrayList<>();
+            for (int i=1;i<carts.length;i++) {
+                if(carts[i]>0){
+                    Commodity commodity=commodityDao.findByid(i);
+                    commodities.add(commodity);
+                    num.add(carts[i]);
+                    System.out.println(commodity.getName());
+                    System.out.println(carts[i]);
+                }
             }
-            if(jsp.equals("show")){
-                Commodity commodity=commodityDao.findByid(Cid);
-                request.setAttribute("commodity",commodity);
-            }
-            RequestDispatcher dispatcher= request.getRequestDispatcher("/"+jsp+".jsp");
+            request.setAttribute("commodities",commodities);
+            request.setAttribute("num",num);
+            RequestDispatcher dispatcher=request.getRequestDispatcher("/cart.jsp");
             dispatcher.forward(request,response);
-            return;
         }
     }
 

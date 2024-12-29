@@ -5,6 +5,8 @@ import com.example.shop.DAO.impl.UserDaoImpl;
 import com.example.shop.data.Commodity;
 import com.example.shop.data.User;
 
+import java.util.ArrayList;
+
 public class Service {
     public static boolean Login(String name,String password){
         UserDaoImpl userDao=new UserDaoImpl();
@@ -43,5 +45,21 @@ public class Service {
             cart=cart+" "+id;
         }
         userDao.updateCart(username,cart);
+    }
+    public static int[] showCart(String username){
+        UserDaoImpl userDao=new UserDaoImpl();
+        CommodityDaoImpl commodityDao=new CommodityDaoImpl();
+        User user=null;
+        user=userDao.findBystr(username);
+        ArrayList<Commodity> commodities=commodityDao.findall();
+        int[] num=new int[commodities.size()+1];
+        String cart=user.getCart();
+        String[] carts=cart.split(" ");
+        int[] id=new int[carts.length];
+        for (int i=0;i<carts.length;i++) {
+            id[i]= Integer.parseInt(carts[i]);
+            num[id[i]]=num[id[i]]+1;
+        }
+        return num;
     }
 }

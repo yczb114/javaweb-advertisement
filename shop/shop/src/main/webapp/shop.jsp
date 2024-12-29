@@ -12,10 +12,14 @@
     <title>上理商城</title>
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/shop.css" type="text/css">
+    <link rel="stylesheet" href="css/common.css" type="text/css">
 </head>
 <h3>商品</h3>
 <div class="user">
     <strong>当前登录的用户为：${sessionScope.username}</strong>
+    <form action="cart-servlet" method="get">
+        <button type="submit" name="button" value="showCart" id="showCart">查看购物车</button>
+    </form>
     <form action="hello-servlet" method="get">
         <button type="submit" name="button" value="out" id="out">退出登录</button>
     </form>
@@ -35,22 +39,21 @@
             <button type="submit" class="btn btn-light" name="tag" value="家具">家具</button>
         </div>
     </form>
-    <ul class="list-group list-group-flush">
+    <ul>
         <c:forEach var="commodity" items="${commodities}">
             <c:url var="commodityUrl" value="show-servlet">
                 <c:param name="Cid" value="${commodity.getCid()}"/>
             </c:url>
-            <li class="list-group-item">
+            <li>
                 <div class="commodity">
                     <img src="${commodity.path}" class="img-fluid" alt="" width="200" height="200"><br>
                     <a href="${commodityUrl}">
                         ${commodity.name}
                     </a><br>
                     <strong class="price">￥${commodity.price}</strong>
-                    <form action="cart-servlet" method="get">
-                        <button type="submit" name="button" class="btn btn-secondary" value="cadd">添加到购物车</button>
+                    <form action="shop-servlet" method="get">
+                        <button type="submit" name="button" class="btn btn-primary" value="cadd">添加到购物车</button>
                         <input type="hidden" name="Cid" value="${commodity.getCid()}">
-                        <input type="hidden" name="jsp" value="shop">
                     </form>
                 </div>
             </li>

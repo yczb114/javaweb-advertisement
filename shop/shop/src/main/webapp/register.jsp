@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>注册</title>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/register.css" type="text/css">
     <c:if test="${not empty requestScope.warning}">
         <script type="text/javascript">
@@ -34,8 +35,8 @@
         </tr>
         <tr>
             <td>
-                <button type="submit" name="button" value="register">注册</button>
-                <button type="submit" name="button" value="back">返回</button>
+                <button type="submit" name="button" value="register" class="btn btn-success">注册</button>
+                <button type="submit" name="button" value="back" class="btn btn-warning">返回</button>
             </td>
         </tr>
     </table>

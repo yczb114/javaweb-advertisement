@@ -13,6 +13,8 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import static com.example.shop.service.Service.addCart;
+
 @WebServlet(name = "shopServlet", value = "/shop-servlet")
 public class ShopServlet extends HttpServlet {
     @Override
@@ -21,6 +23,17 @@ public class ShopServlet extends HttpServlet {
         CommodityDaoImpl commodityDao=new CommodityDaoImpl();
         if(session==null){
             RequestDispatcher dispatcher=request.getRequestDispatcher("/index.jsp");
+            dispatcher.forward(request,response);
+            return;
+        }
+        String button=request.getParameter("button");
+        String username= (String) session.getAttribute("username");
+        if(button!=null&&button.equals("cadd")){
+            int Cid= Integer.parseInt(request.getParameter("Cid"));
+            addCart(username,Cid);
+            ArrayList<Commodity> commodities=commodityDao.findall();
+            request.setAttribute("commodities",commodities);
+            RequestDispatcher dispatcher= request.getRequestDispatcher("/shop.jsp");
             dispatcher.forward(request,response);
             return;
         }
