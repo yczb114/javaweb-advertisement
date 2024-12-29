@@ -5,6 +5,7 @@
 <html>
 <head>
   <title>登录</title>
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
   <link rel="stylesheet" href="css/index.css" type="text/css">
   <c:if test="${not empty requestScope.warning}">
     <script type="text/javascript">
@@ -37,8 +38,8 @@
     </tr>
     <tr>
       <td>
-        <button type="submit" name="button" id="login" value="login">登录</button>
-        <button type="submit" name="button" value="register">注册</button>
+        <button type="submit" name="button" id="login" value="login" class="btn btn-success">登录</button>
+        <button type="submit" name="button" value="register" class="btn btn-primary">注册</button>
       </td>
     </tr>
   </table>

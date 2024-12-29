@@ -10,7 +10,19 @@
 <head>
     <title>${requestScope.commodity.name}</title>
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/common.css" type="text/css">
 </head>
+<h3>具体商品页</h3>
+<div class="user">
+    <strong>当前登录的用户为：${sessionScope.username}</strong>
+    <form action="show-servlet" method="get">
+        <button type="submit" name="button" value="showCart" id="showCart">查看购物车</button>
+    </form>
+    <form action="hello-servlet" method="get">
+        <button type="submit" name="button" value="out" id="out">退出登录</button>
+    </form>
+</div>
+<hr>
 <body>
     <div>
         <img src="${requestScope.commodity.path}" alt="" height="500px" width="500px">
@@ -19,7 +31,6 @@
         <form action="cart-servlet" method="get">
             <button type="submit" name="button" value="cadd">添加到购物车</button>
             <input type="hidden" name="Cid" value="${requestScope.commodity.getCid()}">
-            <input type="hidden" name="jsp" value="show">
         </form>
         <form action="show-servlet" method="get">
             <button type="submit" name="button" value="back">返回</button>
