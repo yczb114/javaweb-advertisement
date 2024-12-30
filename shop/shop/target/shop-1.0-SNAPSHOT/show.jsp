@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
     <title>${requestScope.commodity.name}</title>
@@ -16,7 +18,7 @@
 <div class="user">
     <strong>当前登录的用户为：${sessionScope.username}</strong>
     <form action="show-servlet" method="get">
-        <button type="submit" name="button" value="showCart" id="showCart">查看购物车</button>
+        <button type="submit" name="button" value="showCart" class="green">查看购物车</button>
     </form>
     <form action="hello-servlet" method="get">
         <button type="submit" name="button" value="out" id="out">退出登录</button>
