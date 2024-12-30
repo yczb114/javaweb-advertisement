@@ -8,6 +8,8 @@ html{
 body{
     background: none;
     color: #661;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 .user{
     padding-left: 75%;
@@ -34,7 +36,7 @@ body{
 #out:active {
     background-color: #e67e22; /* 按钮被按下时的背景颜色，深橙色 */
 }
-#showCart {
+.green{
     font-size: 16px; /* 字体大小 */
     font-weight: bold; /* 字体加粗 */
     color: #3c763d; /* 文字颜色，绿色 */
@@ -47,11 +49,11 @@ body{
     letter-spacing: 1px; /* 字母间距 */
 }
 
-#showCart:hover {
+.green:hover{
     background-color: #5cb85c; /* 鼠标悬停时的背景颜色，浅绿色 */
     color: #ffffff; /* 鼠标悬停时的文字颜色，白色 */
 }
 
-#showCart:active {
+.green:active{
     background-color: #3e8f3e; /* 按钮被按下时的背景颜色，深绿色 */
 }

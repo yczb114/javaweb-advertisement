@@ -1,10 +1,5 @@
 a{
     text-decoration:none;
-}
-a:link{/* 未访问链接*/
-    color:#000000;
-}
-a:visited {/* 已访问链接 */
     color:#6633FF;
 }
 a:hover {/* 鼠标移动到链接上 */

@@ -46,11 +46,31 @@ public class Service {
         }
         userDao.updateCart(username,cart);
     }
+    public static void subCart(String username,int id){
+        UserDaoImpl userDao=new UserDaoImpl();
+        User user=null;
+        user=userDao.findBystr(username);
+        String cart=user.getCart();
+        if (cart.length()==1){
+            cart="";
+        }else {
+            int p=cart.indexOf(String.valueOf(id));
+            if(p==0){
+                cart=cart.replaceFirst(id+" ","");
+            }else {
+                cart=cart.replaceFirst(" "+id,"");
+            }
+        }
+        userDao.updateCart(username,cart);
+    }
     public static int[] showCart(String username){
         UserDaoImpl userDao=new UserDaoImpl();
         CommodityDaoImpl commodityDao=new CommodityDaoImpl();
         User user=null;
         user=userDao.findBystr(username);
+        if(user.getCart().isEmpty()){
+            return null;
+        }
         ArrayList<Commodity> commodities=commodityDao.findall();
         int[] num=new int[commodities.size()+1];
         String cart=user.getCart();
@@ -61,5 +81,19 @@ public class Service {
             num[id[i]]=num[id[i]]+1;
         }
         return num;
+    }
+    public static ArrayList<Commodity> searchCommodities(String text){
+        CommodityDaoImpl commodityDao=new CommodityDaoImpl();
+        ArrayList<Commodity> commodities=commodityDao.findall();
+        if(text==null||text.isEmpty()){
+            return commodities;
+        }
+        ArrayList<Commodity> result=new ArrayList<>();
+        for (Commodity c:commodities) {
+            if(c.getName().contains(text)){
+                result.add(c);
+            }
+        }
+        return result;
     }
 }

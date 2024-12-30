@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import static com.example.shop.service.Service.addCart;
+import static com.example.shop.service.Service.searchCommodities;
 
 @WebServlet(name = "shopServlet", value = "/shop-servlet")
 public class ShopServlet extends HttpServlet {
@@ -32,6 +33,14 @@ public class ShopServlet extends HttpServlet {
             int Cid= Integer.parseInt(request.getParameter("Cid"));
             addCart(username,Cid);
             ArrayList<Commodity> commodities=commodityDao.findall();
+            request.setAttribute("commodities",commodities);
+            RequestDispatcher dispatcher= request.getRequestDispatcher("/shop.jsp");
+            dispatcher.forward(request,response);
+            return;
+        }
+        if(button!=null&&button.equals("search")){
+            String text=request.getParameter("searchText");
+            ArrayList<Commodity> commodities=searchCommodities(text);
             request.setAttribute("commodities",commodities);
             RequestDispatcher dispatcher= request.getRequestDispatcher("/shop.jsp");
             dispatcher.forward(request,response);

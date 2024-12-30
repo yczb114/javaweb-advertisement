@@ -1,0 +1,16 @@
+th{
+    width: 25%;
+}
+.show {
+    width: 100px;
+    border: 0;
+    background: none;
+    outline: none;
+    padding: 5px;
+    min-width: 0;
+    box-sizing: content-box;
+}
+.square{
+    width: 30px;
+    height: 30px;
+}

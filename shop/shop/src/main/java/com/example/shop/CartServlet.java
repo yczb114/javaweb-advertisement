@@ -15,8 +15,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static com.example.shop.service.Service.addCart;
-import static com.example.shop.service.Service.showCart;
+import static com.example.shop.service.Service.*;
 
 @WebServlet(name = "cartServlet", value = "/cart-servlet")
 public class CartServlet extends HttpServlet {
@@ -31,17 +30,30 @@ public class CartServlet extends HttpServlet {
         }
         String username= (String) session.getAttribute("username");
         String button=request.getParameter("button");
-        if(button.equals("showCart")){
+        if(button.equals("plus")){
+            int Cid= Integer.parseInt(request.getParameter("cid"));
+            addCart(username,Cid);
+        }
+        if(button.equals("sub")){
+            int Cid= Integer.parseInt(request.getParameter("cid"));
+            subCart(username,Cid);
+        }
+        if(button.equals("pay")){
+            request.setAttribute("message","订单已提交");
+            UserDaoImpl userDao=new UserDaoImpl();
+            userDao.updateCart(username,"");
+        }
+        if(button.equals("showCart")||button.equals("plus")||button.equals("sub")||button.equals("pay")){
             int[] carts=showCart(username);
             ArrayList<Commodity> commodities=new ArrayList<>();
             ArrayList<Integer> num=new ArrayList<>();
-            for (int i=1;i<carts.length;i++) {
-                if(carts[i]>0){
-                    Commodity commodity=commodityDao.findByid(i);
-                    commodities.add(commodity);
-                    num.add(carts[i]);
-                    System.out.println(commodity.getName());
-                    System.out.println(carts[i]);
+            if(carts!=null){
+                for (int i=1;i<carts.length;i++) {
+                    if(carts[i]>0){
+                        Commodity commodity=commodityDao.findByid(i);
+                        commodities.add(commodity);
+                        num.add(carts[i]);
+                    }
                 }
             }
             request.setAttribute("commodities",commodities);
