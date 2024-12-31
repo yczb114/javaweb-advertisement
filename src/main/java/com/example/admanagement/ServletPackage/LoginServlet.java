@@ -1,5 +1,6 @@
 package com.example.admanagement.ServletPackage;
 
+import com.example.admanagement.DAOPackage.AdminCheck;
 import com.example.admanagement.DAOPackage.Advertiser;
 import com.example.admanagement.DAOPackage.AdvertiserDaoImpl;
 import jakarta.servlet.RequestDispatcher;
@@ -34,12 +35,19 @@ public class LoginServlet extends HttpServlet {
             Advertiser advertiser = new Advertiser();
             advertiser=advertiserImpl.searchAdvertiserByName(adName);//对比密码是否相同
             if(adPassword.equals(advertiser.getAdvertiserPassword())){
-                request.setAttribute("advertiser", advertiser);
+                request.setAttribute("adName", adName);
+                request.setAttribute("adEmail", advertiser.getAdvertiserEmail());
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("SubmitAdvertisementPage.jsp");
-            }
+            }//转发到广告提交页面
+            else{response.sendRedirect("Login-servlet");}
         }
         if(logintype.equals("site")){
-
+            AdminCheck adminCheck = new AdminCheck();
+            String adminName = request.getParameter("adminName");
+            String adminPassword = request.getParameter("adminPassword");
+            if(adminCheck.checkAdmin(adminName,adminPassword)){
+                //
+            }
         }
     }
 }

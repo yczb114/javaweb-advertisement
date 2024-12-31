@@ -9,16 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1556ee8-c66d-4541-bf43-e0ac4e8b7c08" name="更改" comment="2024/12/29 20.8邱嘉悦更新">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/register.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/___.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/在变基之前未提交的更改_[更改]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/To_login/Administrator_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/To_login/Administrator_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/To_login/Advertisers_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/To_login/Advertisers_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/To_login/InternetWebmaster_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/To_login/InternetWebmaster_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/To_login/Register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/To_login/Register.html" afterDir="false" />
+    <list default="true" id="d1556ee8-c66d-4541-bf43-e0ac4e8b7c08" name="更改" comment="2024/12/31 15.27邱嘉悦更新">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/AdminCheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/AdminDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +198,7 @@
       <workItem from="1735469757305" duration="4317000" />
       <workItem from="1735552302425" duration="3640000" />
       <workItem from="1735621669456" duration="853000" />
-      <workItem from="1735627046564" duration="778000" />
+      <workItem from="1735627046564" duration="3673000" />
     </task>
     <task id="LOCAL-00001" summary="2024/12/23邱嘉悦创建">
       <option name="closed" value="true" />
@@ -432,7 +425,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735474132776</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="2024/12/31 15.27邱嘉悦更新">
+      <option name="closed" value="true" />
+      <created>1735630050332</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1735630050332</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,7 +500,8 @@
     <MESSAGE value="2024/12/26 21.05邱嘉悦更新" />
     <MESSAGE value="2024/12/26 22.22邱嘉悦更新" />
     <MESSAGE value="2024/12/29 20.8邱嘉悦更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024/12/29 20.8邱嘉悦更新" />
+    <MESSAGE value="2024/12/31 15.27邱嘉悦更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024/12/31 15.27邱嘉悦更新" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

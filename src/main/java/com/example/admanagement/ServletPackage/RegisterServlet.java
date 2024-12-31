@@ -52,9 +52,8 @@ public class RegisterServlet extends HttpServlet {
 
 
                 //后续登录依然然需要用户名信息等，因此将信息存入session中
-                HttpSession session = request.getSession();
-                session.setAttribute("adName", adName);
-                session.setAttribute("adEmail", adEmail);
+                request.setAttribute("adName",adName);
+                request.setAttribute("adEmail",adEmail);
 
 
 

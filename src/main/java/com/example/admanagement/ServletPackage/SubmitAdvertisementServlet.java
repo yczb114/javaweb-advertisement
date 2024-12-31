@@ -14,11 +14,7 @@ import java.io.IOException;
 
 public class SubmitAdvertisementServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession(false);
-        String adName=(String) session.getAttribute("adName");
-        String adEmail=(String) session.getAttribute("adEmail");
-        request.setAttribute("adName", adName);
-        request.setAttribute("adEmail", adEmail);
+
         //从会话得到信息，传到jsp中
         RequestDispatcher dispatcher = request.getRequestDispatcher("./ShowPage/SubmitAdvertisementPage.jsp");
         dispatcher.forward(request, response);
