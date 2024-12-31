@@ -1015,7 +1015,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="293" parent="1" name="advertisementinfo">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-12-28.04:45:38</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-01-01.04:22:50</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="294" parent="1" name="mysql.infoschema">
@@ -1037,72 +1037,101 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="298" parent="293" name="administrator">
+    <table id="298" parent="293" name="adcontent">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="299" parent="293" name="advertiser">
+    <table id="299" parent="293" name="administrator">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="300" parent="293" name="internetwebmaster">
+    <table id="300" parent="293" name="advertiser">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="301" parent="298" name="administratorName">
-      <Position>1</Position>
-      <StoredType>varchar(20)|0s</StoredType>
-    </column>
-    <column id="302" parent="298" name="administratorPassword">
-      <Position>2</Position>
-      <StoredType>int|0s</StoredType>
-    </column>
-    <column id="303" parent="299" name="advertiserName">
+    <table id="301" parent="293" name="internetwebmaster">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="302" parent="298" name="adName">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>char(50)|0s</StoredType>
     </column>
-    <column id="304" parent="299" name="advertiseEmail">
+    <column id="303" parent="298" name="adContent">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>char(50)|0s</StoredType>
     </column>
-    <column id="305" parent="299" name="advertisePassword">
+    <column id="304" parent="298" name="adphoto">
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StoredType>char(50)|0s</StoredType>
+      <StoredType>blob|0s</StoredType>
     </column>
-    <index id="306" parent="299" name="PRIMARY">
-      <ColNames>advertiserName</ColNames>
+    <index id="305" parent="298" name="PRIMARY">
+      <ColNames>adName</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="307" parent="299" name="PRIMARY">
+    <key id="306" parent="298" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="308" parent="300" name="siteName">
+    <column id="307" parent="299" name="administratorName">
+      <Position>1</Position>
+      <StoredType>varchar(20)|0s</StoredType>
+    </column>
+    <column id="308" parent="299" name="administratorPassword">
+      <Position>2</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="309" parent="300" name="advertiserName">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>char(50)|0s</StoredType>
     </column>
-    <column id="309" parent="300" name="siteEmail">
+    <column id="310" parent="300" name="advertiseEmail">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>char(50)|0s</StoredType>
     </column>
-    <column id="310" parent="300" name="sitePassword">
+    <column id="311" parent="300" name="advertisePassword">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>char(50)|0s</StoredType>
     </column>
-    <index id="311" parent="300" name="PRIMARY">
+    <index id="312" parent="300" name="PRIMARY">
+      <ColNames>advertiserName</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="313" parent="300" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="314" parent="301" name="siteName">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>char(50)|0s</StoredType>
+    </column>
+    <column id="315" parent="301" name="siteEmail">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>char(50)|0s</StoredType>
+    </column>
+    <column id="316" parent="301" name="sitePassword">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>char(50)|0s</StoredType>
+    </column>
+    <index id="317" parent="301" name="PRIMARY">
       <ColNames>siteName</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="312" parent="300" name="PRIMARY">
+    <key id="318" parent="301" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

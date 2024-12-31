@@ -9,9 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1556ee8-c66d-4541-bf43-e0ac4e8b7c08" name="更改" comment="2024/12/31 15.27邱嘉悦更新">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/AdminCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/AdminDao.java" afterDir="false" />
+    <list default="true" id="d1556ee8-c66d-4541-bf43-e0ac4e8b7c08" name="更改" comment="2024/12/31 17.10邱嘉悦更新">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/ShowPage/submittablle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/845132bd-8e08-45ef-9aef-45e46bc3db54.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/845132bd-8e08-45ef-9aef-45e46bc3db54.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/AdvertiserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/AdvertiserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/InternetWebmasterDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/InternetWebmasterDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ShowPage/SubmitAdvertisementPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ShowPage/SubmitAdvertisementPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/To_login/Register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/To_login/Register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/To_login/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,8 +121,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Java\JSP\ADManageMent\src\main\webapp" />
+      <recent name="D:\Java\JSP\ADManageMent\src\main\webapp\ShowPage" />
       <recent name="D:\Java\JSP\ADManageMent\src\main\webapp\To_login" />
+      <recent name="D:\Java\JSP\ADManageMent\src\main\webapp" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat 服务器.Tomcat 10.1.30">
@@ -198,7 +210,9 @@
       <workItem from="1735469757305" duration="4317000" />
       <workItem from="1735552302425" duration="3640000" />
       <workItem from="1735621669456" duration="853000" />
-      <workItem from="1735627046564" duration="3673000" />
+      <workItem from="1735627046564" duration="6750000" />
+      <workItem from="1735666562086" duration="4355000" />
+      <workItem from="1735704689445" duration="2777000" />
     </task>
     <task id="LOCAL-00001" summary="2024/12/23邱嘉悦创建">
       <option name="closed" value="true" />
@@ -433,7 +447,23 @@
       <option name="project" value="LOCAL" />
       <updated>1735630050332</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="2024/12/31 16.10邱嘉悦更新">
+      <option name="closed" value="true" />
+      <created>1735632611304</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1735632611304</updated>
+    </task>
+    <task id="LOCAL-00031" summary="2024/12/31 17.10邱嘉悦更新">
+      <option name="closed" value="true" />
+      <created>1735635872933</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1735635872933</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +531,9 @@
     <MESSAGE value="2024/12/26 22.22邱嘉悦更新" />
     <MESSAGE value="2024/12/29 20.8邱嘉悦更新" />
     <MESSAGE value="2024/12/31 15.27邱嘉悦更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024/12/31 15.27邱嘉悦更新" />
+    <MESSAGE value="2024/12/31 16.10邱嘉悦更新" />
+    <MESSAGE value="2024/12/31 17.10邱嘉悦更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024/12/31 17.10邱嘉悦更新" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

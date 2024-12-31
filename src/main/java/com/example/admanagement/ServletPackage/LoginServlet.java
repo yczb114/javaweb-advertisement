@@ -18,13 +18,16 @@ public class LoginServlet extends HttpServlet {
 
     }
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String logintype = request.getParameter("logintype");
+        String logintype = request.getParameter("loginType");
         if(logintype.isEmpty() ||logintype==null)
             response.sendRedirect("hello-servlet");//没有登录选项
         if(logintype.equals("admin")){
             String adminName = request.getParameter("adminName");
             String adminPassword = request.getParameter("adminPassword");
-
+            AdminCheck adminCheck = new AdminCheck();
+            if (adminCheck.checkAdmin(adminName, adminPassword)) {
+                RequestDispatcher rd = request.getRequestDispatcher("Adminstrator.jsp");
+            }//进入管理员界面
 
 
         }
@@ -32,12 +35,18 @@ public class LoginServlet extends HttpServlet {
             String adName = request.getParameter("adName");
             String adPassword = request.getParameter("adPassword");
             AdvertiserDaoImpl advertiserImpl = new AdvertiserDaoImpl();
-            Advertiser advertiser = new Advertiser();
-            advertiser=advertiserImpl.searchAdvertiserByName(adName);//对比密码是否相同
+            Advertiser advertiser =advertiserImpl.searchAdvertiserByName(adName);
+            if(advertiser==null){
+                response.sendRedirect("Register-servlet");
+            }
+
+            //对比密码是否相同
+
             if(adPassword.equals(advertiser.getAdvertiserPassword())){
                 request.setAttribute("adName", adName);
                 request.setAttribute("adEmail", advertiser.getAdvertiserEmail());
-                RequestDispatcher requestDispatcher = request.getRequestDispatcher("SubmitAdvertisementPage.jsp");
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("./ShowPage/SubmitAdvertisementPage.jsp");
+                requestDispatcher.forward(request, response);
             }//转发到广告提交页面
             else{response.sendRedirect("Login-servlet");}
         }

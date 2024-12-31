@@ -15,7 +15,7 @@ import java.io.IOException;
 public class SubmitAdvertisementServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        //从会话得到信息，传到jsp中
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("./ShowPage/SubmitAdvertisementPage.jsp");
         dispatcher.forward(request, response);
 

@@ -36,7 +36,7 @@ public class InternetWebmasterDaoImpl implements InternetWebmasterDao {
             ps.setString(1, name);
             ResultSet rs=ps.executeQuery();
             InternetWebmaster internetWebmaster=new InternetWebmaster();
-            InternetWebmasterDaoImpl internetWebmasterImpl=new InternetWebmasterDaoImpl();
+
             if(rs.next()) {
                 internetWebmaster.setInternetWebmasterName(rs.getString("siteName"));
                 internetWebmaster.setInternetWebmasterEmail(rs.getString("siteEmail"));

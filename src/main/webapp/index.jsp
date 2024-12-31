@@ -3,6 +3,8 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
 <h1><%= "欢迎来到广告投放与管理网站" %>

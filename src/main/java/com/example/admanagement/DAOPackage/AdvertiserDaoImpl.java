@@ -31,25 +31,25 @@ public class AdvertiserDaoImpl implements AdvertiserDao {
     @Override
     public Advertiser searchAdvertiserByName(String advertiserName) {
         String sql = "SELECT * FROM advertiser WHERE advertiserName LIKE ?";
+        Advertiser advertiser = new Advertiser();
         try (Connection con = getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setString(1, advertiserName);  // Set the advertiser name as the first parameter
-            Advertiser advertiser = new Advertiser();
-            try (ResultSet rs = ps.executeQuery()) {
+
+            ResultSet rs = ps.executeQuery();
 
                 if(rs.next()){
                     advertiser.setAdvertiserName(rs.getString("advertiserName"));
-                    advertiser.setAdvertiserEmail(rs.getString("advertiserEmail"));
-                    advertiser.setAdvertiserPassword(rs.getString("advertiserPassword"));
+                    advertiser.setAdvertiserEmail(rs.getString("advertiseEmail"));
+                    advertiser.setAdvertiserPassword(rs.getString("advertisePassword"));
                     return advertiser;
                 }
                 else return null;
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);  // Handle SQLException
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+            } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
         }
 
     }
