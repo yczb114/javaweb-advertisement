@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
@@ -43,10 +44,9 @@ public class LoginServlet extends HttpServlet {
             //对比密码是否相同
 
             if(adPassword.equals(advertiser.getAdvertiserPassword())){
-                request.setAttribute("adName", adName);
-                request.setAttribute("adEmail", advertiser.getAdvertiserEmail());
-                RequestDispatcher requestDispatcher = request.getRequestDispatcher("./ShowPage/SubmitAdvertisementPage.jsp");
-                requestDispatcher.forward(request, response);
+                HttpSession session = request.getSession();
+                session.setAttribute("adName", adName);
+                response.sendRedirect("SubmitAd-servlet");
             }//转发到广告提交页面
             else{response.sendRedirect("Login-servlet");}
         }

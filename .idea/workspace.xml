@@ -9,20 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1556ee8-c66d-4541-bf43-e0ac4e8b7c08" name="更改" comment="2024/12/31 17.10邱嘉悦更新">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/ShowPage/submittablle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="d1556ee8-c66d-4541-bf43-e0ac4e8b7c08" name="更改" comment="2025/1/1 14.48邱嘉悦更新">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/Advertisement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/ShowAdvertisementServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/845132bd-8e08-45ef-9aef-45e46bc3db54.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/845132bd-8e08-45ef-9aef-45e46bc3db54.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/AdvertiserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/AdvertiserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/AdvertiserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/AdvertiserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/InternetWebmasterDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/InternetWebmasterDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/SubmitAdvertisementServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/SubmitAdvertisementServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/ShowPage/SubmitAdvertisementPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ShowPage/SubmitAdvertisementPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/To_login/Register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/To_login/Register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/To_login/register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +210,7 @@
       <workItem from="1735621669456" duration="853000" />
       <workItem from="1735627046564" duration="6750000" />
       <workItem from="1735666562086" duration="4355000" />
-      <workItem from="1735704689445" duration="2777000" />
+      <workItem from="1735704689445" duration="11804000" />
     </task>
     <task id="LOCAL-00001" summary="2024/12/23邱嘉悦创建">
       <option name="closed" value="true" />
@@ -463,7 +461,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735635872933</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="2025/1/1 14.48邱嘉悦更新">
+      <option name="closed" value="true" />
+      <created>1735714128228</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1735714128228</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,7 +539,8 @@
     <MESSAGE value="2024/12/31 15.27邱嘉悦更新" />
     <MESSAGE value="2024/12/31 16.10邱嘉悦更新" />
     <MESSAGE value="2024/12/31 17.10邱嘉悦更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024/12/31 17.10邱嘉悦更新" />
+    <MESSAGE value="2025/1/1 14.48邱嘉悦更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="2025/1/1 14.48邱嘉悦更新" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

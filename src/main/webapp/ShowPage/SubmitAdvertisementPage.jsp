@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -9,6 +10,7 @@
 
 </head>
 <body>
+
 
 <div class="container">
     <!-- 左侧选择栏 -->
@@ -26,16 +28,19 @@
         <div id="dynamicContent">
             <!-- 默认显示广告提交表单 -->
             <h3>广告提交</h3>
-            <form action="SubmitAd-servlet" method="POST">
+            <form action="./SubmitAd-servlet" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="adName" value="${adName}">
                 <label for="adTitle">广告标题：</label><br>
                 <input type="text" id="adTitle" name="adTitle"><br><br>
                 <label for="adContent">广告宣传语：</label><br>
                 <textarea id="adContent" name="adContent"></textarea><br><br>
-                <label for="adContent">广告图片或logo</label><br>
+                <label for="adphoto">广告图片或logo</label><br>
                 <input type="file" id="adphoto" name="adphoto"><br><br>
                 <button type="submit">提交广告</button>
             </form>
         </div>
+
+
     </div>
 </div>
 
@@ -43,7 +48,8 @@
     function showAdForm() {
         document.getElementById('dynamicContent').innerHTML = `
                 <h3>广告提交</h3>
-                <form action="submitAd.jsp" method="POST">
+                <form action="./SubmitAd-servlet" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="adName" value="${adName}">
                     <label for="adTitle">广告标题：</label><br>
                     <input type="text" id="adTitle" name="adTitle"><br><br>
                     <label for="adContent">广告内容：</label><br>
@@ -57,11 +63,25 @@
 
     function showContent() {
         document.getElementById('dynamicContent').innerHTML = `
-                <h3>显示内容</h3>
-                <p>这里显示一些内容，例如最新的广告或其他信息。</p>
-            `;
+            <c:if test="${not empty ads}">
+                <h3><em>你已经投放以下广告</em></h3>
+                <c:forEach var="item" items="${ads}">
+                    <div class="ad-container">
+                        <h4>${item.adTitle}</h4>
+                        <p>${item.adContent}</p>
+                        <c:if test="${not empty item.base64Photo}">
+                            <img src="data:image/jpeg;base64,${item.base64Photo}" alt="广告图片" style="max-width: 100%;"/>
+                        </c:if>
+                    </div>
+                </c:forEach>
+            </c:if>
+            <c:if test="${empty ads}">
+                <h3><em>你未投放任何广告</em></h3>
+            </c:if>
+        `;
     }
 </script>
+
 <style>
     /* 基本布局 */
     body {

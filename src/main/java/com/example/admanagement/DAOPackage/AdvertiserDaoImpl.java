@@ -1,9 +1,12 @@
 package com.example.admanagement.DAOPackage;
 
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AdvertiserDaoImpl implements AdvertiserDao {
 
@@ -54,5 +57,59 @@ public class AdvertiserDaoImpl implements AdvertiserDao {
 
     }
 
+    @Override
+    public void addAdvertisement(String advertiserName, String adTitle, String adContent, InputStream adphoto) {
+        String sql = "INSERT INTO adContent(adTitle, adContent, adPhoto, adName) VALUES (?, ?, ?, ?)";
+        try (Connection con = getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, adTitle);
+            ps.setString(2, adContent);
+            ps.setBinaryStream(3, adphoto);
+            ps.setString(4, advertiserName);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+// 查询广告信息
+@Override
+public List<Advertisement> getAllAdvertisementByadName(String adName) {
+    List<Advertisement> ad = new ArrayList<>();
+    System.out.println(adName+"111");
+    String sql = "SELECT adTitle, adContent, adphoto, adName FROM adcontent WHERE adName = ?";
+    try (Connection con = getConnection(); PreparedStatement ps = con.prepareStatement(sql)) {
+        ps.setString(1, adName); // Set the adName for the query
 
+        ResultSet rs = ps.executeQuery();
+
+        // Process all rows in the ResultSet
+        while (rs.next()) {
+            String adTitle = rs.getString("adTitle");
+            String adContent = rs.getString("adContent");
+            InputStream adphoto = rs.getBinaryStream("adphoto");
+            String advertiserName = rs.getString("adName");
+
+            // Create an Advertisement object and add it to the list
+            Advertisement advertisement = new Advertisement(adTitle, adContent, adphoto, advertiserName);
+            ad.add(advertisement);
+        }
+
+        // Return the list of advertisements
+        return ad.isEmpty() ? null : ad;
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new RuntimeException("Database query failed", e);
+    } catch (Exception e) {
+        throw new RuntimeException("Unexpected error", e);
+    }
 }
+
+
+    }
+
+
+
+
