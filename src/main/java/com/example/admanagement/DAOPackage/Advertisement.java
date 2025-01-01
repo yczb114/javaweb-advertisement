@@ -7,6 +7,7 @@ public class Advertisement {
     private String adContent;
     private InputStream adphoto;  // 图片是二进制流
     private String adName;
+    private String adTag;
     private String base64Photo;  // 用于存储 Base64 编码后的图片
 
     public Advertisement(String adTitle, String adContent, InputStream adPhoto, String advertiserName) {
@@ -14,6 +15,22 @@ public class Advertisement {
         this.adContent = adContent;
         this.adphoto = adPhoto;
         this.adName = advertiserName;
+    }
+
+    public Advertisement(String adTitle, String adTag, String adName, InputStream adphoto, String adContent) {
+        this.adTitle = adTitle;
+        this.adTag = adTag;
+        this.adName = adName;
+        this.adphoto = adphoto;
+        this.adContent = adContent;
+    }
+
+    public String getAdTag() {
+        return adTag;
+    }
+
+    public void setAdTag(String adTag) {
+        this.adTag = adTag;
     }
 
     public String getAdTitle() {

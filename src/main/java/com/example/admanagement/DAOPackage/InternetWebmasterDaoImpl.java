@@ -30,7 +30,7 @@ public class InternetWebmasterDaoImpl implements InternetWebmasterDao {
 
     @Override
     public InternetWebmaster findInternetWebmasterByName(String name) {
-        String sql = "SELECT * FROM InternetWebmaster WHERE siteName = ?";
+        String sql = "SELECT * FROM internetwebmaster WHERE siteName = ?";
         try(Connection con=getConnection();
             PreparedStatement ps=con.prepareStatement(sql);){
             ps.setString(1, name);
@@ -41,6 +41,7 @@ public class InternetWebmasterDaoImpl implements InternetWebmasterDao {
                 internetWebmaster.setInternetWebmasterName(rs.getString("siteName"));
                 internetWebmaster.setInternetWebmasterEmail(rs.getString("siteEmail"));
                 internetWebmaster.setInternetWebmasterPassword(rs.getString("sitePassword"));
+                System.out.println(internetWebmaster.getInternetWebmasterEmail());
                 return internetWebmaster;
             }else return null;
 

@@ -9,18 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1556ee8-c66d-4541-bf43-e0ac4e8b7c08" name="更改" comment="2025/1/1 14.48邱嘉悦更新">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/Advertisement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/ShowAdvertisementServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/845132bd-8e08-45ef-9aef-45e46bc3db54.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/845132bd-8e08-45ef-9aef-45e46bc3db54.xml" afterDir="false" />
+    <list default="true" id="d1556ee8-c66d-4541-bf43-e0ac4e8b7c08" name="更改" comment="2025/1/2 1.23邱嘉悦更新">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/check.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/AdvertiserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/AdvertiserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/AdvertiserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/AdvertiserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/SubmitAdvertisementServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/SubmitAdvertisementServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ShowPage/SubmitAdvertisementPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ShowPage/SubmitAdvertisementPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/InternetWebmasterDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/InternetWebmasterDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/AdResponseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/AdResponseServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +25,8 @@
       <list>
         <option value="Interface" />
         <option value="HTML File" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -85,33 +78,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript 调试.Register.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript 调试.test.html.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Tomcat 服务器.Tomcat 10.1.30.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ADmangement&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/33395/AppData/Roaming/JetBrains/IntelliJIdea2024.2/jdbc-drivers/MySQL ConnectorJ/8.2.0/com/mysql/mysql-connector-j/8.2.0/mysql-connector-j-8.2.0.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript 调试.Register.html.executor": "Run",
+    "JavaScript 调试.test.html.executor": "Run",
+    "Maven.ADManageMent [clean].executor": "Run",
+    "Maven.ADManageMent [package].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat 服务器.Tomcat 10.1.30.executor": "Run",
+    "git-widget-placeholder": "ADmangement",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/33395/AppData/Roaming/JetBrains/IntelliJIdea2024.2/jdbc-drivers/MySQL ConnectorJ/8.2.0/com/mysql/mysql-connector-j/8.2.0/mysql-connector-j-8.2.0.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql_aurora&quot;,
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql_aurora",
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="origin" branch="ADmangement" />
@@ -210,7 +205,8 @@
       <workItem from="1735621669456" duration="853000" />
       <workItem from="1735627046564" duration="6750000" />
       <workItem from="1735666562086" duration="4355000" />
-      <workItem from="1735704689445" duration="11804000" />
+      <workItem from="1735704689445" duration="12218000" />
+      <workItem from="1735728016303" duration="25425000" />
     </task>
     <task id="LOCAL-00001" summary="2024/12/23邱嘉悦创建">
       <option name="closed" value="true" />
@@ -469,7 +465,63 @@
       <option name="project" value="LOCAL" />
       <updated>1735714128228</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="2025/1/1 17.23邱嘉悦更新">
+      <option name="closed" value="true" />
+      <created>1735723398326</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1735723398326</updated>
+    </task>
+    <task id="LOCAL-00034" summary="2025/1/1 19.18邱嘉悦更新">
+      <option name="closed" value="true" />
+      <created>1735730349862</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1735730349862</updated>
+    </task>
+    <task id="LOCAL-00035" summary="2025/1/1 21.07邱嘉悦更新">
+      <option name="closed" value="true" />
+      <created>1735736886468</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1735736886468</updated>
+    </task>
+    <task id="LOCAL-00036" summary="2025/1/1 22.46邱嘉悦更新">
+      <option name="closed" value="true" />
+      <created>1735742790536</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1735742790536</updated>
+    </task>
+    <task id="LOCAL-00037" summary="2025/1/1 23.43邱嘉悦更新">
+      <option name="closed" value="true" />
+      <created>1735746235843</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1735746235843</updated>
+    </task>
+    <task id="LOCAL-00038" summary="2025/1/2 1.23邱嘉悦更新">
+      <option name="closed" value="true" />
+      <created>1735752186414</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1735752186414</updated>
+    </task>
+    <task id="LOCAL-00039" summary="2025/1/2 1.23邱嘉悦更新">
+      <option name="closed" value="true" />
+      <created>1735752198958</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1735752198958</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,9 +571,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit" />
-    <MESSAGE value="2024/12/23邱嘉悦创建" />
-    <MESSAGE value="2024/12/24 16.29邱嘉悦更新" />
     <MESSAGE value="2024/12/24邱嘉悦更新" />
     <MESSAGE value="2024/12/24 22:52邱嘉悦更新" />
     <MESSAGE value="2024/12/25 17:16邱嘉悦更新" />
@@ -540,7 +589,14 @@
     <MESSAGE value="2024/12/31 16.10邱嘉悦更新" />
     <MESSAGE value="2024/12/31 17.10邱嘉悦更新" />
     <MESSAGE value="2025/1/1 14.48邱嘉悦更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="2025/1/1 14.48邱嘉悦更新" />
+    <MESSAGE value="2025/1/1 17.23邱嘉悦更新" />
+    <MESSAGE value="2025/1/1 19.18邱嘉悦更新" />
+    <MESSAGE value="2025/1/1 21.07邱嘉悦更新" />
+    <MESSAGE value="2025/1/1 22.32邱嘉悦更新" />
+    <MESSAGE value="2025/1/1 22.46邱嘉悦更新" />
+    <MESSAGE value="2025/1/1 23.43邱嘉悦更新" />
+    <MESSAGE value="2025/1/2 1.23邱嘉悦更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="2025/1/2 1.23邱嘉悦更新" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

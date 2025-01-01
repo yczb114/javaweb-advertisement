@@ -58,14 +58,15 @@ public class AdvertiserDaoImpl implements AdvertiserDao {
     }
 
     @Override
-    public void addAdvertisement(String advertiserName, String adTitle, String adContent, InputStream adphoto) {
-        String sql = "INSERT INTO adContent(adTitle, adContent, adPhoto, adName) VALUES (?, ?, ?, ?)";
+    public void addAdvertisement(String advertiserName, String adTitle, String adContent, InputStream adphoto,String adTag) {
+        String sql = "INSERT INTO adcontent(adTitle, adContent, adPhoto, adName,adtag) VALUES (?, ?, ?, ?,?)";
         try (Connection con = getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, adTitle);
             ps.setString(2, adContent);
             ps.setBinaryStream(3, adphoto);
             ps.setString(4, advertiserName);
+            ps.setString(5, adTag);
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -107,8 +108,33 @@ public List<Advertisement> getAllAdvertisementByadName(String adName) {
     }
 }
 
+    @Override
+    public List<Advertisement> getAllAdvertisement() {
+       String sql="SELECT adTitle, adContent, adphoto, adName,adtag,adid FROM adcontent";
+       List<Advertisement> ads = new ArrayList<>();
+       try(Connection con=getConnection();
+       PreparedStatement ps= con.prepareStatement(sql)) {
+           ResultSet rs = ps.executeQuery();
+           while (rs.next()) {
 
+               String adTitle = rs.getString("adTitle");
+               String adContent = rs.getString("adContent");
+               InputStream adphoto = rs.getBinaryStream("adphoto");
+               String adName = rs.getString("adName");
+               String adTag = rs.getString("adtag");
+               String adid = rs.getString("adid");
+               Advertisement ad=new Advertisement( adTitle,
+                        adTag,  adName,  adphoto,  adContent);
+               ads.add(ad);
+           }
+           return ads;
+       } catch (SQLException e) {
+           throw new RuntimeException(e);
+       } catch (Exception e) {
+           throw new RuntimeException(e);
+       }
     }
+}
 
 
 

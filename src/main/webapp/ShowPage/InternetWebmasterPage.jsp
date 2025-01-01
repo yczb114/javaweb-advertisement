@@ -1,20 +1,20 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
-<html lang="zh-CN">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><%--
+  Created by IntelliJ IDEA.
+  User: 33395
+  Date: 2025/1/1
+  Time: 23:39
+  To change this template use File | Settings | File Templates.
+--%>
+
+<html>
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>广告管理系统</title>
-
+    <title>互联网站主</title>
 </head>
-<body>
-
-
 <div class="container">
     <!-- 左侧选择栏 -->
     <div class="sidebar">
+        <h1>互联网站长</h1>
         <h2>选择操作</h2>
         <ul>
             <li><a href="#" onclick="showAdForm()">提交广告</a></li>
@@ -26,18 +26,11 @@
     <div class="content-area">
         <!-- 动态内容部分 -->
         <div id="dynamicContent">
-            <!-- 默认显示广告提交表单 -->
-            <h3>广告提交</h3>
-            <form action="./SubmitAd-servlet" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="adName" value="${adName}">
-                <label for="adTitle">广告标题：</label><br>
-                <input type="text" id="adTitle" name="adTitle"><br><br>
-                <label for="adContent">广告宣传语：</label><br>
-                <textarea id="adContent" name="adContent"></textarea><br><br>
-                <label for="adphoto">广告图片或logo</label><br>
-                <input type="file" id="adphoto" name="adphoto"><br><br>
-                <button type="submit">提交广告</button>
-            </form>
+            <!-- 默认显示接口 -->
+            <h3>广告接口</h3>
+            <div class="justify-content-center">
+                fetch
+            </div>
         </div>
 
 
@@ -47,19 +40,10 @@
 <script>
     function showAdForm() {
         document.getElementById('dynamicContent').innerHTML = `
-                <h3>广告提交</h3>
-                <form action="./SubmitAd-servlet" method="POST" enctype="multipart/form-data">
-                    <input type="hidden" name="adName" value="${adName}">
-                    <label for="adTitle">广告标题：</label><br>
-                    <input type="text" id="adTitle" name="adTitle"><br><br>
-                    <label for="adContent">广告内容：</label><br>
-                    <textarea id="adContent" name="adContent"></textarea><br><br>
-                    <label for="adContent">广告图片或logo</label><br>
-                    <input type="file" id="adphoto" name="adphoto"><br><br>
-                    <label for="adContent">广告分类</label><br>
-                    <input type="text” id="adTag" name="adTag"><br><br>
-                    <button type="submit">提交广告</button>
-                </form>
+                <h3>广告接口</h3>
+                <div class="justify-content-center">
+                fetch
+            </div>
             `;
     }
 
@@ -78,7 +62,7 @@
                 </c:forEach>
             </c:if>
             <c:if test="${empty ads}">
-                <h3><em>你未投放任何广告</em></h3>
+                <h3><em>目前未投放任何广告</em></h3>
             </c:if>
         `;
     }
@@ -163,5 +147,4 @@
     }
 
 </style>
-</body>
 </html>

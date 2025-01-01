@@ -48,10 +48,10 @@ public class SubmitAdvertisementServlet extends HttpServlet {
         String adContent = request.getParameter("adContent");
         Part adPhoto = request.getPart("adphoto");
         String adName = request.getParameter("adName");
-
+        String adTag= request.getParameter("adTag");
         InputStream fileContent = adPhoto.getInputStream();
         AdvertiserDaoImpl advertiserImpl = new AdvertiserDaoImpl();
-        advertiserImpl.addAdvertisement(adName, adTitle, adContent, fileContent);
+        advertiserImpl.addAdvertisement(adName, adTitle, adContent, fileContent,adTag);
 
         // 重定向到同一个 Servlet
         response.sendRedirect("SubmitAd-servlet");

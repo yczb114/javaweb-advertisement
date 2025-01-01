@@ -1,8 +1,6 @@
 package com.example.admanagement.ServletPackage;
 
-import com.example.admanagement.DAOPackage.AdminCheck;
-import com.example.admanagement.DAOPackage.Advertiser;
-import com.example.admanagement.DAOPackage.AdvertiserDaoImpl;
+import com.example.admanagement.DAOPackage.*;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -12,6 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet(name = "LoginServlet", value = "/Login-servlet")
 public class LoginServlet extends HttpServlet {
@@ -20,6 +19,7 @@ public class LoginServlet extends HttpServlet {
     }
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String logintype = request.getParameter("loginType");
+        System.out.println(logintype);
         if(logintype.isEmpty() ||logintype==null)
             response.sendRedirect("hello-servlet");//没有登录选项
         if(logintype.equals("admin")){
@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
             String adminPassword = request.getParameter("adminPassword");
             AdminCheck adminCheck = new AdminCheck();
             if (adminCheck.checkAdmin(adminName, adminPassword)) {
-                RequestDispatcher rd = request.getRequestDispatcher("Adminstrator.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("./ShowPage/Adminstrator.jsp");
             }//进入管理员界面
 
 
@@ -51,11 +51,19 @@ public class LoginServlet extends HttpServlet {
             else{response.sendRedirect("Login-servlet");}
         }
         if(logintype.equals("site")){
-            AdminCheck adminCheck = new AdminCheck();
-            String adminName = request.getParameter("adminName");
-            String adminPassword = request.getParameter("adminPassword");
-            if(adminCheck.checkAdmin(adminName,adminPassword)){
-                //
+
+            String siteName = request.getParameter("siteName");
+            String sitePassword = request.getParameter("sitePassword");
+            System.out.println(siteName+sitePassword);
+            InternetWebmasterDaoImpl internetWebmasterImpl = new InternetWebmasterDaoImpl();
+            InternetWebmaster internetWebmaster=internetWebmasterImpl.findInternetWebmasterByName(siteName);
+            System.out.println(internetWebmaster.getInternetWebmasterPassword());
+            if(internetWebmaster!=null&&internetWebmaster.getInternetWebmasterPassword().equals(sitePassword)){
+                response.sendRedirect("BrowseAd-servlet");
+
+            }else{
+                response.getWriter().write("有问题");
+
             }
         }
     }
