@@ -1,0 +1,41 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+div {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+span {
+    font-weight: bold;
+}
+
+div {
+    white-space: pre-wrap; /* 保持内容的格式，如换行等 */
+}

@@ -30,17 +30,11 @@ public class NewsDaoImpl implements NewsDao {
             while(rs.next()){
                 int nid=rs.getInt("nid");
                 String title=rs.getString("title");
-                String content=rs.getString("content");
                 String author=rs.getString("author");
+                String content=rs.getString("content");
                 String date=rs.getString("date");
-                ArrayList<String> tags=new ArrayList<>();
                 String tag1=rs.getString("tag1");
-                tags.add(tag1);
-                String tag2=rs.getString("tag2");
-                tags.add(tag2);
-                String tag3=rs.getString("tag3");
-                tags.add(tag3);
-                News news=new News(nid,title,content,author,date,tags);
+                News news=new News(nid,title,author,content,date,tag1);
                 newsList.add(news);
             }
             return newsList;
@@ -65,19 +59,73 @@ public class NewsDaoImpl implements NewsDao {
             //当存在查询结果时
             if(rs.next()){
                 String title=rs.getString("title");
-                String content=rs.getString("content");
                 String author=rs.getString("author");
+                String content=rs.getString("content");
                 String date=rs.getString("date");
-                ArrayList<String> tags=new ArrayList<>();
                 String tag1=rs.getString("tag1");
-                tags.add(tag1);
-                String tag2=rs.getString("tag2");
-                tags.add(tag2);
-                String tag3=rs.getString("tag3");
-                tags.add(tag3);
-                news = new News(nid,title,content,author,date,tags);
+                news = new News(nid,title,author,content,date,tag1);
             }
             return news;
+        } catch (SQLException sqle) {
+            throw new RuntimeException(sqle);
+        }
+    }
+    //通过新闻标签查找新闻
+    @Override
+    public ArrayList<News> getNewsByTag(String tag) {
+        //防止数据库注入
+        PreparedStatement p;
+        //查找到的新闻
+        ArrayList<News> newsList = new ArrayList<>();
+        try(//连接数据库
+            Connection connection = getConnection()){
+            //sql语句 用于根据tag查询新闻内容
+            String sql = "select * from news where tag1=?";
+            p=connection.prepareStatement(sql);
+            p.setString(1, tag);
+            ResultSet rs=p.executeQuery();
+            //当存在查询结果时
+            while(rs.next()){
+                int nid=rs.getInt("nid");
+                String title=rs.getString("title");
+                String author=rs.getString("author");
+                String content=rs.getString("content");
+                String date=rs.getString("date");
+                String tag1=rs.getString("tag1");
+                News news = new News(nid,title,author,content,date,tag1);
+                newsList.add(news);
+            }
+            return newsList;
+        } catch (SQLException sqle) {
+            throw new RuntimeException(sqle);
+        }
+    }
+    //通过关键字查找新闻
+    @Override
+    public ArrayList<News> getNewsByKeywords(String keywords){
+        //防止数据库注入
+        PreparedStatement p;
+        //查找到的新闻
+        ArrayList<News> newsList = new ArrayList<>();
+        try(//连接数据库
+            Connection connection = getConnection()){
+            //sql语句 用于根据新闻标题的关键字查询新闻内容
+            String sql = "select * from news where title LIKE ?";
+            p=connection.prepareStatement(sql);
+            p.setString(1, '%'+keywords+'%');
+            ResultSet rs=p.executeQuery();
+            //当存在查询结果时
+            while(rs.next()){
+                int nid=rs.getInt("nid");
+                String title=rs.getString("title");
+                String author=rs.getString("author");
+                String content=rs.getString("content");
+                String date=rs.getString("date");
+                String tag1=rs.getString("tag1");
+                News news = new News(nid,title,author,content,date,tag1);
+                newsList.add(news);
+            }
+            return newsList;
         } catch (SQLException sqle) {
             throw new RuntimeException(sqle);
         }

@@ -19,7 +19,7 @@ public class UserDaoImpl implements UserDao {
         try(//连接数据库
             Connection connection = getConnection()){
             //sql语句 对user表进行插入
-            String sql = "insert into user values(?,?)";
+            String sql = "insert into users values(?,?)";
             p=connection.prepareStatement(sql);
             //数据库表中顺序为用户名，密码
             p.setString(1,user.getUsername());
@@ -40,7 +40,7 @@ public class UserDaoImpl implements UserDao {
         try(//连接数据库
             Connection connection = getConnection()){
             //sql语句 查找user表中的相应用户名
-            String sql = "select * from user where username=?";
+            String sql = "select * from users where username=?";
             p=connection.prepareStatement(sql);
             p.setString(1,username);
             //rs存储数据库查询结果

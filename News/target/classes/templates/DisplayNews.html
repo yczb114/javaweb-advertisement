@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/DisplayNews.css">
+    <title>新闻</title>
+</head>
+<body>
+<h1>新闻列表</h1>
+<form action="#" th:action="@{/DisplayNews/search}" method="get">
+    <label><input type="text" name="search" id="search"/></label>
+    <button type="submit">搜索</button>
+</form>
+<p th:text="'目前：'+${currentTag}"></p>
+<div>
+    <table>
+        <tr>
+            <td><a th:href="@{'/news/tag/all'}" th:text="所有新闻"></a></td>
+            <td><a th:href="@{'/news/tag/digital'}" th:text="数码"></a></td>
+            <td><a th:href="@{'/news/tag/food'}" th:text="食品"></a></td>
+            <td><a th:href="@{'/news/tag/sport'}" th:text="运动"></a></td>
+            <td><a th:href="@{'/news/tag/medicine'}" th:text="医药"></a></td>
+            <td><a th:href="@{'/news/tag/test'}" th:text="测试"></a></td>
+        </tr>
+    </table>
+</div>
+<div>
+    <ul>
+        <li th:each="news : ${newsList}">
+            <a th:href="@{'/DisplayDetails/' + ${news.nid}}" th:text="${news.title}"></a>
+            <!-- 显示作者 -->
+            <span th:text="${news.author}"></span>
+            <!-- 显示日期 -->
+            <span th:text="${news.date}"></span>
+            <span th:if="${news.tag}">标签：<span th:text="${news.tag}"></span></span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,25 +1,42 @@
 package com.example.news.data;
 
-import lombok.Data;
-
 import java.util.ArrayList;
 
-@Data
 public class News {
-    int nid;
+    private int nid;
     private String title;
     private String author;
     private String content;
     private String date;
-    ArrayList<String> tags;
+    private String tag;
 
-    public News(int nid,String title, String author, String content, String date, ArrayList<String> tags) {
+    public News(int nid,String title, String author, String content, String date,String tag) {
         this.nid = nid;
         this.title = title;
         this.author = author;
         this.content = content;
         this.date = date;
-        this.tags = tags;
+        this.tag = tag;
     }
     public News(){}
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public int getNid() {return nid;}
+
+    public String getTag() {return tag;}
 }

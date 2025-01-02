@@ -1,9 +1,7 @@
 package com.example.news.dao;
 
 import com.example.news.data.User;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface UserDao extends ConnectionDao{
     //添加新用户
     boolean insertUser(User user);

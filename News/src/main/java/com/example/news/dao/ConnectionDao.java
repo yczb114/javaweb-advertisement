@@ -1,28 +1,25 @@
 package com.example.news.dao;
 
-import org.springframework.stereotype.Repository;
-
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-@Repository
+import org.springframework.context.annotation.Bean;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.jdbc.core.JdbcTemplate;
+
 public interface ConnectionDao {
+    @Bean
     //查找并返回数据源对象
-    static DataSource getDataSource() {
-        DataSource dataSource = null;
-        try{
-            Context context = new InitialContext();
-            dataSource=(DataSource)context.lookup("java:comp/env/jdbc/webstoreDS");
-        }catch(NamingException ne){
-            System.out.println("异常:" + ne);
-        }
+    default DataSource getDataSource(){
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        dataSource.setUrl("jdbc:sqlserver://localhost:1433;databaseName=News;encrypt=true;trustServerCertificate=true");
+        dataSource.setUsername("sa");
+        dataSource.setPassword("123456");
         return dataSource;
     }
-    //返回连接对象方法
+
     default Connection getConnection(){
         DataSource dataSource = getDataSource();
         Connection connection = null;
@@ -33,4 +30,5 @@ public interface ConnectionDao {
         }
         return connection;
     }
+
 }
