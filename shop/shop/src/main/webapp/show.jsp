@@ -27,7 +27,7 @@
 <hr>
 <body>
     <div>
-        <img src="${requestScope.commodity.path}" alt="" height="500px" width="500px">
+        <img src="${requestScope.commodity.path}" alt="" height="250px" width="250px">
         <h1>${requestScope.commodity.name}</h1>
         <h2>价格:${requestScope.commodity.price}元</h2>
         <form action="cart-servlet" method="get" name="commodity">
