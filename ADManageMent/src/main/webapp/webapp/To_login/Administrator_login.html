@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="login.css">
+    <title>Administrator login webpage</title>
+</head>
+<body>
+<div class="login-container">管理员登录</div>
+<div class="login-container">
+    <form action="Login-servlet" method="post">
+        <div class="form-title">管理员登录</div>
+        <label>用户名</label>
+        <input type="text" name="adminName" id="adminName"><br>
+        <label>密码</label>
+        <input type="password" name="adminPassword" id="search-input">
+        <label><br></label>
+        <input type="submit" name="adPaword" id="reset-button">
+        <input type="hidden" value="admin" name="loginType"><br>
+    </form>
+</div>
+
+</body>
+</html>
