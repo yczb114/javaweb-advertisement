@@ -26,7 +26,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     const base64Image = data.base64photo;
                     img.src=`data:image/jpeg;base64,${base64Image}`;
                     img.addEventListener('click',function(){
-                        window.location.href = data.adurl;
+                        var id=data.adid;
+                        fetch(`http://116.62.49.213:8080/ADManageMent-1.0-SNAPSHOT/ClickRate-servlet?adid=${id}`,{
+                           mode:'cors',
+                        })
+                        // window.location.href = data.adurl;
                     });
                 })
                 .catch(function(error) {
@@ -50,7 +54,15 @@ document.addEventListener("DOMContentLoaded", function () {
             const base64Image = data.base64photo;
             img.src=`data:image/jpeg;base64,${base64Image}`;
             img.addEventListener('click',function(){
-                window.location.href = data.adurl;
+                var id=data.adid;
+                fetch(`http://116.62.49.213:8080/ADManageMent-1.0-SNAPSHOT/ClickRate-servlet?adid=${id}&username=shop`,{
+                    mode:'cors',
+                }).then(function(response) {
+                    if (!response.ok) {
+                        throw new Error('返回出错' + response.statusText);
+                    }
+                })
+                // window.location.href = data.adurl;
             });
         })
         .catch(function(error) {
