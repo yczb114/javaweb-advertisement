@@ -4,6 +4,7 @@ public class InternetWebmaster {
     private String InternetWebmasterName;
     private String InternetWebmasterEmail;
     private String InternetWebmasterPassword;
+    private int adclick;
 
     public String getInternetWebmasterName() {
         return InternetWebmasterName;
@@ -28,6 +29,15 @@ public class InternetWebmaster {
     public void setInternetWebmasterEmail(String internetWebmasterEmail) {
         InternetWebmasterEmail = internetWebmasterEmail;
     }
+
+    public int getAdclick() {
+        return adclick;
+    }
+
+    public void setAdclick(int adclick) {
+        this.adclick = adclick;
+    }
+
     public InternetWebmaster() {
 
     }

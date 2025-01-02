@@ -9,7 +9,7 @@ public class Advertisement {
     private String adName;
     private String adTag;
     private String base64Photo;  // 用于存储 Base64 编码后的图片
-    private String adclick;
+    private int adclick;
     private int adsend;
     private int adid;
 
@@ -44,11 +44,11 @@ public class Advertisement {
         this.adsend = adsend;
     }
 
-    public String getAdclick() {
+    public int getAdclick() {
         return adclick;
     }
 
-    public void setAdclick(String adclick) {
+    public void setAdclick(int adclick) {
         this.adclick = adclick;
     }
 

@@ -9,10 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1556ee8-c66d-4541-bf43-e0ac4e8b7c08" name="更改" comment="2025/1/2 13.27邱嘉悦更新">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="d1556ee8-c66d-4541-bf43-e0ac4e8b7c08" name="更改" comment="2025/1/2 21.48邱嘉悦更新">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/845132bd-8e08-45ef-9aef-45e46bc3db54.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/845132bd-8e08-45ef-9aef-45e46bc3db54.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/AdResponseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/AdResponseServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/InternetWebmaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/InternetWebmaster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/InternetWebmasterDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/InternetWebmasterDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/InternetWebmasterDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/DAOPackage/InternetWebmasterDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/BrowseAd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/BrowseAd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/ClickRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/ClickRate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/admanagement/ServletPackage/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ShowPage/InternetWebmasterPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ShowPage/InternetWebmasterPage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +30,8 @@
       <list>
         <option value="Interface" />
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -96,7 +102,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "inlay.hints",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -209,7 +215,7 @@
       <workItem from="1735796254295" duration="27000" />
       <workItem from="1735797299143" duration="1181000" />
       <workItem from="1735801150839" duration="588000" />
-      <workItem from="1735812296278" duration="1948000" />
+      <workItem from="1735812296278" duration="11280000" />
     </task>
     <task id="LOCAL-00001" summary="2024/12/23邱嘉悦创建">
       <option name="closed" value="true" />
@@ -532,7 +538,23 @@
       <option name="project" value="LOCAL" />
       <updated>1735796270594</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="2025/1/2 21.01邱嘉悦更新">
+      <option name="closed" value="true" />
+      <created>1735822901679</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1735822901679</updated>
+    </task>
+    <task id="LOCAL-00042" summary="2025/1/2 21.48邱嘉悦更新">
+      <option name="closed" value="true" />
+      <created>1735825700206</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1735825700206</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,8 +604,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2024/12/24 22:52邱嘉悦更新" />
-    <MESSAGE value="2024/12/25 17:16邱嘉悦更新" />
     <MESSAGE value="2024/12/25 23.44邱嘉悦更新" />
     <MESSAGE value="2024/12/26 20.42邱嘉悦更新" />
     <MESSAGE value="2024/12/26 20.54邱嘉悦更新" />
@@ -607,7 +627,9 @@
     <MESSAGE value="2025/1/1 23.43邱嘉悦更新" />
     <MESSAGE value="2025/1/2 1.23邱嘉悦更新" />
     <MESSAGE value="2025/1/2 13.27邱嘉悦更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="2025/1/2 13.27邱嘉悦更新" />
+    <MESSAGE value="2025/1/2 21.01邱嘉悦更新" />
+    <MESSAGE value="2025/1/2 21.48邱嘉悦更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="2025/1/2 21.48邱嘉悦更新" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

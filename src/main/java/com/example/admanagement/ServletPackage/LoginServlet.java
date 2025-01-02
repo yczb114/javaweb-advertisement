@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 @WebServlet(name = "LoginServlet", value = "/Login-servlet")
 public class LoginServlet extends HttpServlet {
@@ -57,9 +58,27 @@ public class LoginServlet extends HttpServlet {
             System.out.println(siteName+sitePassword);
             InternetWebmasterDaoImpl internetWebmasterImpl = new InternetWebmasterDaoImpl();
             InternetWebmaster internetWebmaster=internetWebmasterImpl.findInternetWebmasterByName(siteName);
-            System.out.println(internetWebmaster.getInternetWebmasterPassword());
+
             if(internetWebmaster!=null&&internetWebmaster.getInternetWebmasterPassword().equals(sitePassword)){
-                response.sendRedirect("BrowseAd-servlet");
+                request.setAttribute("siteName", siteName);
+                System.out.println("BrowseAd");
+                AdvertiserDaoImpl advertiserImpl = new AdvertiserDaoImpl();
+                List<Advertisement> ads= advertiserImpl.getAllAdvertisement();
+                for(Advertisement ad:ads){
+                    if (ad.getphoto() != null) {
+                        byte[] photoData = ad.getphoto().readAllBytes();
+                        String base64Photo = java.util.Base64.getEncoder().encodeToString(photoData);
+                        ad.setBase64Photo(base64Photo);  // 设置 Base64 编码后的图片
+                    }
+                }
+
+
+                double income=internetWebmaster.getAdclick()*0.5;
+                request.setAttribute("ads", ads);
+                request.setAttribute("income", income);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("./ShowPage/InternetWebmasterPage.jsp");
+                dispatcher.forward(request, response);
+
 
             }else{
                 response.getWriter().write("有问题");

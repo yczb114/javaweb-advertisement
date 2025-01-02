@@ -125,7 +125,7 @@ public List<Advertisement> getAllAdvertisementByadName(String adName) {
                String adName = rs.getString("adName");
                String adTag = rs.getString("adtag");
                int adid = rs.getInt("adid");
-               String adclick = rs.getString("adclick");
+               int adclick = rs.getInt("adclick");
                int adsend = rs.getInt("adsend");
                Advertisement ad=new Advertisement( adTitle,
                         adTag,  adName,  adphoto,  adContent);
