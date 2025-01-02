@@ -30,13 +30,20 @@
         <img src="${requestScope.commodity.path}" alt="" height="500px" width="500px">
         <h1>${requestScope.commodity.name}</h1>
         <h2>价格:${requestScope.commodity.price}元</h2>
-        <form action="cart-servlet" method="get">
-            <button type="submit" name="button" value="cadd">添加到购物车</button>
+        <form action="cart-servlet" method="get" name="commodity">
+            <button type="submit" class="btn btn-primary" name="button" value="cadd" id="cadd">添加到购物车</button>
             <input type="hidden" name="Cid" value="${requestScope.commodity.getCid()}">
+            <input type="hidden" name="adtag" value="${requestScope.commodity.getTag()}">
+            <input type="hidden" name="button" value="cadd">
         </form>
         <form action="show-servlet" method="get">
-            <button type="submit" name="button" value="back">返回</button>
+            <button type="submit" class="btn btn-light" name="button" value="back">返回</button>
         </form>
     </div>
+    <div class="ad" id="ad">
+        <img src="" alt="" id="adImg" width="150px" height="150px">
+        <button id="close">x</button>
+    </div>
+    <script type="text/javascript" src="js/ad.js"></script>
 </body>
 </html>

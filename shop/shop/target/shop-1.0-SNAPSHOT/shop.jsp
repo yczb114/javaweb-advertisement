@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: theorigenallywhite
@@ -32,13 +31,13 @@
 <div class="d1">
     <form action="shop-servlet" method="get">
         <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="submit" class="btn btn-light" name="tag" value="首页">首页</button>
-            <button type="submit" class="btn btn-light" name="tag" value="数码">数码</button>
-            <button type="submit" class="btn btn-light" name="tag" value="食品">食品</button>
-            <button type="submit" class="btn btn-light" name="tag" value="母婴">母婴</button>
-            <button type="submit" class="btn btn-light" name="tag" value="运动">运动</button>
-            <button type="submit" class="btn btn-light" name="tag" value="医药">医药</button>
-            <button type="submit" class="btn btn-light" name="tag" value="家具">家具</button>
+            <button type="submit" class="btn btn-light" name="tag" value="all">首页</button>
+            <button type="submit" class="btn btn-light" name="tag" value="digital">数码</button>
+            <button type="submit" class="btn btn-light" name="tag" value="food">食品</button>
+            <button type="submit" class="btn btn-light" name="tag" value="babycare">母婴</button>
+            <button type="submit" class="btn btn-light" name="tag" value="sport">运动</button>
+            <button type="submit" class="btn btn-light" name="tag" value="medicine">医药</button>
+            <button type="submit" class="btn btn-light" name="tag" value="furniture">家具</button>
         </div>
         <label for="searchText"></label>
         <input type="text" name="searchText" id="searchText">
@@ -56,14 +55,21 @@
                         ${commodity.name}
                     </a><br>
                     <strong class="price">￥${commodity.price}</strong>
-                    <form action="shop-servlet" method="get">
-                        <button type="submit" name="button" class="btn btn-primary" value="cadd">添加到购物车</button>
+                    <form action="shop-servlet" method="get" name="commodity">
+                        <button type="submit" name="button" class="btn btn-primary" value="cadd" id="cadd">添加到购物车</button>
                         <input type="hidden" name="Cid" value="${commodity.getCid()}">
+                        <input type="hidden" name="adtag" value="${commodity.getTag()}">
+                        <input type="hidden" name="button" value="cadd">
                     </form>
                 </div>
             </li>
         </c:forEach>
     </ul>
 </div>
+<div class="ad" id="ad">
+    <img src="" alt="" id="adImg" width="150px" height="150px">
+    <button id="close">x</button>
+</div>
+<script type="text/javascript" src="js/ad.js"></script>
 </body>
 </html>
