@@ -1,0 +1,10 @@
+com\example\news\data\News.class
+com\example\news\dao\Impl\UserDaoImpl.class
+com\example\news\dao\UserDao.class
+com\example\news\dao\ConnectionDao.class
+com\example\news\NewsApplication.class
+com\example\news\controller\DisplayNews.class
+com\example\news\dao\Impl\NewsDaoImpl.class
+com\example\news\dao\NewsDao.class
+com\example\news\controller\Login.class
+com\example\news\data\User.class

@@ -1,0 +1,10 @@
+D:\Homework\Web\News\src\main\java\com\example\news\controller\DisplayNews.java
+D:\Homework\Web\News\src\main\java\com\example\news\controller\Login.java
+D:\Homework\Web\News\src\main\java\com\example\news\dao\ConnectionDao.java
+D:\Homework\Web\News\src\main\java\com\example\news\dao\Impl\NewsDaoImpl.java
+D:\Homework\Web\News\src\main\java\com\example\news\dao\Impl\UserDaoImpl.java
+D:\Homework\Web\News\src\main\java\com\example\news\dao\NewsDao.java
+D:\Homework\Web\News\src\main\java\com\example\news\dao\UserDao.java
+D:\Homework\Web\News\src\main\java\com\example\news\data\News.java
+D:\Homework\Web\News\src\main\java\com\example\news\data\User.java
+D:\Homework\Web\News\src\main\java\com\example\news\NewsApplication.java

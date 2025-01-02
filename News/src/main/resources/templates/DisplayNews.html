@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/DisplayNews.css">
+    <link rel="stylesheet" href="/Model.css">
     <title>新闻</title>
 </head>
 <body>
+<div id="adModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>这是一则广告！</p>
+        <img src="/food1.jpg" id="adImg">
+    </div>
+</div>
+<script src="/Model.js"></script>
 <h1>新闻列表</h1>
 <form action="#" th:action="@{/DisplayNews/search}" method="get">
     <label><input type="text" name="search" id="search"/></label>
@@ -27,7 +36,38 @@
 <div>
     <ul>
         <li th:each="news : ${newsList}">
-            <a th:href="@{'/DisplayDetails/' + ${news.nid}}" th:text="${news.title}"></a>
+            <a th:href="@{'/DisplayDetails/' + ${news.nid}}" th:text="${news.title}">
+               <!--th:onclick="'sendTagToExternalSite(\'' + ${news.tag} + '\'); return false;'"--></a>
+            <script>
+                function sendTagToExternalSite(tag) {
+                    fetch(`http://116.62.49.213:8080/ADManageMent-1.0-SNAPSHOT/AdResponse-servlet?tag=${tag}`, {
+                        method: 'GET',
+                        mode:'cors',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    })
+                        .then(response => response.json())
+                        .then(function(data) {
+                            var img=document.getElementById("adImg");
+                            const base64Image = data.base64photo;
+                            img.src=`data:image/jpeg;base64,${base64Image}`;
+                            img.addEventListener('click',function(){
+                                var id=data.adid;
+                                //根据点击广告的id 发给广告商
+                                ////加上username
+                                fetch(`http://116.62.49.213:8080/ADManageMent-1.0-SNAPSHOT/ClickRate-servlet?adid=${id}&username=News`,{
+                                    mode:'cors',
+                                }).then(function(response) {
+                                    if (!response.ok) {
+                                        throw new Error('返回出错' + response.statusText);
+                                    }
+                                })
+                            });
+                        })
+                        .catch((error) => console.error('Error:', error));
+                }
+            </script>
             <!-- 显示作者 -->
             <span th:text="${news.author}"></span>
             <!-- 显示日期 -->
