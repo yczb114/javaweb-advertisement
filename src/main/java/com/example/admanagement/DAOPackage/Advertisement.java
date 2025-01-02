@@ -9,6 +9,9 @@ public class Advertisement {
     private String adName;
     private String adTag;
     private String base64Photo;  // 用于存储 Base64 编码后的图片
+    private String adclick;
+    private int adsend;
+    private int adid;
 
     public Advertisement(String adTitle, String adContent, InputStream adPhoto, String advertiserName) {
         this.adTitle = adTitle;
@@ -23,6 +26,30 @@ public class Advertisement {
         this.adName = adName;
         this.adphoto = adphoto;
         this.adContent = adContent;
+    }
+
+    public int getAdid() {
+        return adid;
+    }
+
+    public void setAdid(int adid) {
+        this.adid = adid;
+    }
+
+    public int getAdsend() {
+        return adsend;
+    }
+
+    public void setAdsend(int adsend) {
+        this.adsend = adsend;
+    }
+
+    public String getAdclick() {
+        return adclick;
+    }
+
+    public void setAdclick(String adclick) {
+        this.adclick = adclick;
     }
 
     public String getAdTag() {

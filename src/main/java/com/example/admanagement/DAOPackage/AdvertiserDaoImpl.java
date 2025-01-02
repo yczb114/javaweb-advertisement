@@ -59,7 +59,7 @@ public class AdvertiserDaoImpl implements AdvertiserDao {
 
     @Override
     public void addAdvertisement(String advertiserName, String adTitle, String adContent, InputStream adphoto,String adTag) {
-        String sql = "INSERT INTO adcontent(adTitle, adContent, adPhoto, adName,adtag) VALUES (?, ?, ?, ?,?)";
+        String sql = "INSERT INTO adcontent(adTitle, adContent, adPhoto, adName,adtag,adclick,adsend) VALUES (?, ?, ?, ?,?,?,?)";
         try (Connection con = getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, adTitle);
@@ -67,6 +67,8 @@ public class AdvertiserDaoImpl implements AdvertiserDao {
             ps.setBinaryStream(3, adphoto);
             ps.setString(4, advertiserName);
             ps.setString(5, adTag);
+            ps.setInt(6,0);
+            ps.setInt(7,0);
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -110,7 +112,7 @@ public List<Advertisement> getAllAdvertisementByadName(String adName) {
 
     @Override
     public List<Advertisement> getAllAdvertisement() {
-       String sql="SELECT adTitle, adContent, adphoto, adName,adtag,adid FROM adcontent";
+       String sql="SELECT adTitle, adContent, adphoto, adName,adtag,adid,adclick,adsend FROM adcontent";
        List<Advertisement> ads = new ArrayList<>();
        try(Connection con=getConnection();
        PreparedStatement ps= con.prepareStatement(sql)) {
@@ -122,9 +124,14 @@ public List<Advertisement> getAllAdvertisementByadName(String adName) {
                InputStream adphoto = rs.getBinaryStream("adphoto");
                String adName = rs.getString("adName");
                String adTag = rs.getString("adtag");
-               String adid = rs.getString("adid");
+               int adid = rs.getInt("adid");
+               String adclick = rs.getString("adclick");
+               int adsend = rs.getInt("adsend");
                Advertisement ad=new Advertisement( adTitle,
                         adTag,  adName,  adphoto,  adContent);
+               ad.setAdclick(adclick);
+               ad.setAdsend(adsend);
+               ad.setAdid(adid);
                ads.add(ad);
            }
            return ads;
@@ -134,6 +141,44 @@ public List<Advertisement> getAllAdvertisementByadName(String adName) {
            throw new RuntimeException(e);
        }
     }
+
+
+
+    @Override
+    public void updateAdsend(int newadsend, int adid){
+        String sql = "UPDATE adcontent SET adsend = ? WHERE adid = ?";
+        try(Connection con=getConnection();
+        PreparedStatement ps= con.prepareStatement(sql)) {
+            ps.setInt(1, newadsend);
+            ps.setInt(2, adid);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
+
+    @Override
+    public void updateAdclick(int newclick, int adid){
+        String sql = "UPDATE adcontent SET adclick = ? WHERE adid = ?";
+        try(Connection con=getConnection();
+        PreparedStatement ps= con.prepareStatement(sql)) {
+            ps.setInt(1, newclick);
+            ps.setInt(2, adid);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }
 
 

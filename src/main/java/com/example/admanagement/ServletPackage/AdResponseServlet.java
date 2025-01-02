@@ -27,7 +27,10 @@ public class AdResponseServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 允许跨域
-        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Origin", "http://10.100.164.14:8080");
+
+        response.setHeader("Access-Control-Allow-Credentials", "true");
+
         response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
         response.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
@@ -55,6 +58,7 @@ public class AdResponseServlet extends HttpServlet {
         }
             if (flag == 0) {
                 Cookie cookie = new Cookie(tag, "1"); // 新 tag 增加值为 1
+
                 response.addCookie(cookie); // 将 cookie 添加到响应中
             }
         }
@@ -115,10 +119,12 @@ public class AdResponseServlet extends HttpServlet {
         // 读取广告图片并转为 Base64 编码
         byte[] photoData = adWithTag.get(ranIndex).getphoto().readAllBytes();
         String base64Photo = Base64.getEncoder().encodeToString(photoData);
-
+        adWithTag.get(ranIndex).setAdsend(adWithTag.get(ranIndex).getAdsend()+1);
+        advertiserImpl.updateAdsend(adWithTag.get(ranIndex).getAdsend(),adWithTag.get(ranIndex).getAdid());
         // 返回 JSON 响应
         JSONObject jsonResponse = new JSONObject();
         jsonResponse.put("base64photo", base64Photo);
+        jsonResponse.put("adid", adWithTag.get(ranIndex).getAdid());
         jsonResponse.put("adurl", "http://116.62.49.213:8080/");
 
         PrintWriter out = response.getWriter();

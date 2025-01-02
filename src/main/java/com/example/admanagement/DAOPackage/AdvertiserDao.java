@@ -13,4 +13,8 @@ public interface AdvertiserDao extends DAO {
     // 查询广告信息
     List<Advertisement> getAllAdvertisementByadName(String adName);
     List<Advertisement> getAllAdvertisement();
+
+    void updateAdsend(int newadsend, int adid);
+
+    void updateAdclick(int newclick, int adid);
 }
