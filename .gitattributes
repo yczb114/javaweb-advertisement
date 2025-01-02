@@ -1,0 +1,4 @@
+*.jsp linguist-language=HTML
+*.java linguist-language=Java
+*.html linguist-documentation=true
+*.class linguist-generated=true
