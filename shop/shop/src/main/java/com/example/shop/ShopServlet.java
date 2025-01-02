@@ -48,14 +48,16 @@ public class ShopServlet extends HttpServlet {
         }
         String tag=request.getParameter("tag");
         ArrayList<Commodity> commodities;
-        if(tag.equals("首页")){
-            commodities=commodityDao.findall();
-        }else {
-            commodities=commodityDao.findBytag(tag);
+        if(tag!=null){
+            if(tag.equals("all")){
+                commodities=commodityDao.findall();
+            }else {
+                commodities=commodityDao.findBytag(tag);
+            }
+            request.setAttribute("commodities",commodities);
+            RequestDispatcher dispatcher=request.getRequestDispatcher("/shop.jsp");
+            dispatcher.forward(request,response);
         }
-        request.setAttribute("commodities",commodities);
-        RequestDispatcher dispatcher=request.getRequestDispatcher("/shop.jsp");
-        dispatcher.forward(request,response);
     }
 
     @Override

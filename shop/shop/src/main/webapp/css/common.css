@@ -57,3 +57,21 @@ body{
 .green:active{
     background-color: #3e8f3e; /* 按钮被按下时的背景颜色，深绿色 */
 }
+#ad{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#close{
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    line-height: 20px;
+    text-align: center;
+    background: white;
+    color: #bb2d3b;
+    border: 2px solid #bb2d3b;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
