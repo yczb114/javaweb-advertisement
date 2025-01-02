@@ -27,14 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     img.src=`data:image/jpeg;base64,${base64Image}`;
                     img.addEventListener('click',function(){
                         var id=data.adid;
-                        fetch(`http://116.62.49.213:8080/ADManageMent-1.0-SNAPSHOT/ClickRate-servlet?adid=${id}`,{
+                        fetch(`http://116.62.49.213:8080/ADManageMent-1.0-SNAPSHOT/ClickRate-servlet?adid=${id}&username=shop`,{
                            mode:'cors',
                         }).then(function(response) {
                             if (!response.ok) {
                                 throw new Error('返回出错' + response.statusText);
                             }
                         })
-                        // window.location.href = data.adurl;
+                        window.location.href = data.adurl;
                     });
                 })
                 .catch(function(error) {
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         throw new Error('返回出错' + response.statusText);
                     }
                 })
-                // window.location.href = data.adurl;
+                window.location.href = data.adurl;
             });
         })
         .catch(function(error) {
